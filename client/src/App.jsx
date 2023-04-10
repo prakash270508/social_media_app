@@ -1,16 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import NotFound from "./components/NotFound";
+import Profile from './components/Profile.jsx'
+import Navbar from "./components/NAvbar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      This is app running jay mata di
-    </div>
-  )
+    <Router>
+      <Navbar />
+      <div className="main-container">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/auth/login" element={<Login />} />
+          <Route exact path="/auth/signup" element={<Signup />} />
+          <Route exact path="/auth/signup" element={<Signup />} />
+          <Route exact path="/user-profile/:id" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
