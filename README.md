@@ -7,6 +7,6 @@
 
 github Link : <a href="https://github.com/prakash270508/social_media_app"> https://github.com/prakash270508/social_media_app </a>
 
-These are made with :- redux and material ui
+These are made with :- redux and bootstrap
 
  </p>
