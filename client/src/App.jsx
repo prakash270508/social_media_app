@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/auth/login" element={<Login />} />
           <Route exact path="/auth/signup" element={<Signup />} />
           <Route exact path="/auth/signup" element={<Signup />} />
-          <Route exact path="/user-profile/:id" element={<Profile />} />
+          <Route exact path="/user-profile/:userId" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

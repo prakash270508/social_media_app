@@ -167,3 +167,16 @@ export const addDeleteFriend = asyncHandler(async (req, res) => {
 
   res.status(200).json(formattedFriends);
 });
+
+//Get all users
+export const allUserList = asyncHandler(async (req, res) => {
+  const users = await User.find();
+
+  if (!users) {
+    return res.status(404).send({
+      message: "No User Found",
+    });
+  }
+
+  res.status(200).json({ message: "All user Found", users });
+});

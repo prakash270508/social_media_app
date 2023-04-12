@@ -7,6 +7,7 @@ import {
   getUser,
   getUserFriend,
   addDeleteFriend,
+  allUserList,
 } from "../controllers/userController.js";
 
 const router = express.Router();
@@ -17,7 +18,8 @@ router.route("/login").post(login);
 router.route("/about").get(isAuthenticate, about);
 
 //User
-router.route("/:id").get(isAuthenticate, getUser);
+router.route("/allUsers").get(allUserList);
+router.route("/:id").get(getUser);
 router.get("/:id/friends", isAuthenticate, getUserFriend);
 
 /* UPDATE */

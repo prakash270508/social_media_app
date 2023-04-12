@@ -20,13 +20,13 @@ export default function Home() {
       ) : (
         <>
           <div className="row">
-            <div className="col-3" style={{backgroundColor:"#fefcfc"}}>
-                <Left />
+            <div className="col-3" style={{ backgroundColor: "#fefcfc" }}>
+              <Left />
             </div>
             <div className="col-6">
               <Middle posts={allPostsList} />
             </div>
-            <div className="col-3" style={{backgroundColor:"#fefcfc"}}>
+            <div className="col-3" style={{ backgroundColor: "#fefcfc" }}>
               <Right />
             </div>
           </div>
