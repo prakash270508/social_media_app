@@ -9,3 +9,18 @@ export const allUsers = createAsyncThunk("allUsers", async () => {
     throw new Error(error);
   }
 });
+
+export const regiser = createAsyncThunk(
+  "register-user",
+  async (registerData) => {
+    try {
+      const reponse = await axios.post(
+        "http://localhost:3001/regiser",
+        registerData
+      );
+      return reponse.data.savedUser;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+);

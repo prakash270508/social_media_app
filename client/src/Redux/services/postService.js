@@ -7,9 +7,6 @@ export const allPosts = createAsyncThunk("allposts", async () => {
 
     return response.data.post;
   } catch (error) {
-    throw new Error(error.message)
+    throw new Error(error.message);
   }
 });
-
-
-

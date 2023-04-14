@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { allUsers } from "../services/userService";
+import { allUsers, regiser } from "../services/userService";
 
 const initialState = {
   users: [],
@@ -25,6 +25,20 @@ export const userSlice = createSlice({
         state.users = action.payload;
       })
       .addCase(allUsers.rejected, (state, action) => {
+        state.isLoadingUser = false;
+        state.isError = true;
+        state.errorMessageUser = action.error.message;
+      })
+      .addCase(regiser.pending, (state) => {
+        state.isLoadingUser = true;
+        state.isError = false;
+        state.errorMessageUser = "";
+      })
+      .addCase(regiser.fulfilled, (state, action) => {
+        state.isLoadingUser = false;
+        state.user = action.payload;
+      })
+      .addCase(regiser.rejected, (state, action) => {
         state.isLoadingUser = false;
         state.isError = true;
         state.errorMessageUser = action.error.message;

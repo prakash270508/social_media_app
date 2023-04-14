@@ -5,3 +5,12 @@
     margin-left: 20vw;
     margin-top: 3.8vw;
 }
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover{
+    color: red;
+}

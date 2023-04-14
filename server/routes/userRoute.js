@@ -13,7 +13,7 @@ import {
 const router = express.Router();
 
 //Auth
-router.route("/register").post(register);
+// router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/about").get(isAuthenticate, about);
 
